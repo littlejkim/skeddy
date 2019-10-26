@@ -1,6 +1,11 @@
+#-*- coding:utf-8 -*-
+
+import sys
 import pandas as pd
 import datetime as dt
 import html5lib
+
+company_code = sys.argv[1]
 
 def pastinfo(code, page):
     
@@ -14,8 +19,7 @@ def pastinfo(code, page):
     price_data['날짜'] = pd.to_datetime(price_data['날짜'], format='%Y/%m/%d')
     return price_data
     
-
-pd = pastinfo("215600", 1)
+pd = pastinfo(company_code, 1)
 
 print(pd)
 
