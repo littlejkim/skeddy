@@ -3,6 +3,7 @@ document.getElementById("test").addEventListener('click', () => {
 
     function modifyDOM() {
         var x = document.getElementsByClassName("t11")[0].innerHTML;
+        
         console.log(x);
         return document.body.innerHTML;
     }
@@ -14,5 +15,8 @@ document.getElementById("test").addEventListener('click', () => {
         //Here we have just the innerHTML and not DOM structure
         console.log('Popup script:')
         console.log(results[0]);
+        var y = window.getSelection().toString();   
+        console.log(y); 
     });
 });
+
