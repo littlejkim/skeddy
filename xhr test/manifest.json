@@ -1,0 +1,21 @@
+{
+   
+    "manifest_version": 2,
+    "name": "newstock",
+    "version": "1.0",
+    "browser_action": {
+      "default_title": "Test",
+      "default_popup": "popup.html"
+  },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "activeTab",
+        "https://*.naver.com/*"
+        
+
+    ]
+  }
+    
