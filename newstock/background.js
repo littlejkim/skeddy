@@ -1,17 +1,12 @@
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
-        console.log(sender.tab ?
-            "from a content script:" + sender.tab.url :
-            "from the extension");
+        var xhr = new XMLHttpRequest();
 
-        var x = new XMLHttpRequest();
-        x.open('GET', 'https://13.125.105.168/005930');
-        x.onload = function () {
-            console.log(x.responseText);
-        };
-        x.send();
+        xhr.open("GET", 'http://13.125.105.168/' + request.code, false);
+        xhr.send();
 
+        var result = xhr.responseText;
         sendResponse({
-            data: "0000"
+            data: result
         });
     });
